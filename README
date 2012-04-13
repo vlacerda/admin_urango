@@ -11,7 +11,7 @@ Junto das tabelas de uso especifico do admin, há 1 módulo completo de projeto,
 
 5 - Crie um usuário usando o formulário encontrado na url URL_DO_ADMIN/user/create
 
-6 - Desative o acesso ao formulário de criação de usuários indo em modules/admin/init.php e adicionando a seguinte regra de route no final do arquivo.
+6 - Desative o acesso ao formulário de criação de usuários indo em modules/admin/init.php e adicionando a seguinte regra de route no inicio do arquivo.
 
 Route::set('create_user_admin', 'admin/user/create(/)')
 ->defaults(array(

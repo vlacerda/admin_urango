@@ -9,24 +9,25 @@
      
      <a href="#" class="forgot_pass">Forgot password</a> 
      
-	<?php echo form::open("admin/user/login", array("method"=>"post", "class"=> "niceform")) ?>     
+    <?php echo form::open("admin/user/login", array("method"=>"post", "class"=> "niceform")) ?>     
             <fieldset>
-	
-				<dl>						
+    
+                <dl>                        
                     <dt><?=Form::label("username", "Username:") ?></dt>
                     <dd><?=Form::input("username", "", array("name"=>"", "id"=>"", "size"=>"54")) ?></dd>
                 </dl>
 
-				<dl>						
+                <dl>                        
                     <dt><?=Form::label("password", "Password:") ?></dt>
                     <dd><?=Form::input("password", "", array("type"=>"password","name"=>"", "id"=>"", "size"=>"54")) ?></dd>
                 </dl>
                 
                
                  <dl class="submit">
-                	<?=Form::submit("", "Enter") ?>
+                    <?=Form::submit("", "Enter") ?>
                  </dl>
                 
             </fieldset>
-	<?php echo form::close() ?>
+    <?php echo form::close() ?>
+    <h2><?=$message ; ?></h2>
 </div>

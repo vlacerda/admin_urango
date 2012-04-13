@@ -60,6 +60,7 @@ class Controller_Admin_User extends Controller_Admin_Application {
     public function action_login() 
     {        
              
+        $message = "";
         if (HTTP_Request::POST == $this->request->method()) 
         {
             // Attempt to login user
@@ -77,8 +78,7 @@ class Controller_Admin_User extends Controller_Admin_Application {
             }
         }
 
-		$this->template->content_for_layout = View::factory('admin/user/login')
-            ->bind('message', $message);
+        $this->message = $message;
     }
      
     public function action_logout() 
