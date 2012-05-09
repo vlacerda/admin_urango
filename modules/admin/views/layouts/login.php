@@ -44,17 +44,7 @@ ddaccordion.init({
 </head>
 <body>
 <div id="main_container">
-
 	<?=$content_for_layout?>   
-	
-    
-    <div class="footer_login">
-    
-    	<div class="left_footer_login">IN ADMIN PANEL | Powered by <a href="http://indeziner.com">INDEZINER</a></div>
-    	<div class="right_footer_login"><a href="http://indeziner.com"><?=HTML::image("public/admin/images/indeziner_logo.gif", array("alt"=>"", "border"=>"0")) ?></a></div>
-    
-    </div>
-
 </div>		
 </body>
 </html>

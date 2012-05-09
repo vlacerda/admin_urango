@@ -51,6 +51,7 @@ height:100px;
 .header_login{
 width:600px;
 margin:auto;
+margin-top:100px;
 }
 .logo{
 float:left;
@@ -496,5 +497,8 @@ color: #ccc;
 	font-weight: bold;
 	padding:4px 0px;
 }
+
+.login_form .niceform dt{background-color: transparent;}
+.login_form .niceform dt label{padding-right:10px;}
 
 .niceform textarea{clear:both;}

@@ -5,10 +5,7 @@
 
 <div class="login_form">
      
-     <h3>Admin Panel Login</h3>
-     
-     <a href="#" class="forgot_pass">Forgot password</a> 
-     
+    <h3>CMS Urango</h3>     
     <?php echo form::open("admin/user/login", array("method"=>"post", "class"=> "niceform")) ?>     
             <fieldset>
     
