@@ -341,4 +341,47 @@ class form extends Kohana_Form {
          		'</dl>';
 
 	}
+
+	/**
+	 * Cria um ou vários campos para upload de arquivos
+	 *
+	 *     
+	 *
+	 * @param   string  input name
+	 * @param   string  input value
+	 * @param   array   html attributes
+	 * @return  string
+	 * @uses    
+	 */
+	public static function admin_imagefile($name, $value = "", array $attributes = array())
+	{
+
+		if(!array_key_exists("label", $attributes)){
+			$attributes["label"] = $name;
+		}
+
+		if(!array_key_exists("btn_caption", $attributes)){
+			$attributes["btn_caption"] = "+ Adicionar " . $name;
+		}
+
+		if($value == ""){		
+			$html = '
+			<div class="repeat_img" style="background:#CCC; padding:10px;">
+	      '.form::admin_file($name, array("label" => $attributes["label"])).'
+	    </div>';
+    }else{
+    	$html = '
+			<div style="background:#CCC; padding:10px;">
+	      '.html::anchor("delete/".$value->id, html::image("uploads/".$value->filename) ).'
+	    </div>';
+    }
+
+    $html .= '<dl class="add" style="overflow:hidden;">
+      <a href="#" class="bt_green" id="add_img"><span class="bt_green_lft"></span><strong>'.$attributes["btn_caption"].'</strong><span class="bt_green_r"></span></a>
+    </dl>
+    <input type="hidden" name="num_file">';
+
+    return $html;
+
+	}
 }
