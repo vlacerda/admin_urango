@@ -5,6 +5,7 @@ class Controller_Admin_Application extends Controller_Template {
   public $template = 'layouts/admin';
   public $view = null;
   public $_data = array();
+  public $user = null;
   
   // set data for view
   public function __set($name, $value){
@@ -18,6 +19,7 @@ class Controller_Admin_Application extends Controller_Template {
 		$this->template->body_id = '';
 		$this->template->notice = '';
 		$this->template->alert = '';
+		$this->user = Auth::instance()->get_user();
 	  }						
   }
   
