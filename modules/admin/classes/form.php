@@ -364,6 +364,10 @@ class form extends Kohana_Form {
 			$attributes["multiple"] = false;
 		}
 
+		if(!array_key_exists("upload_dir", $attributes)){
+			$attributes["upload_dir"] = "";
+		}
+
 		if(!array_key_exists("btn_caption", $attributes)){
 			$attributes["btn_caption"] = "+ Adicionar " . $name;
 		}
@@ -376,7 +380,7 @@ class form extends Kohana_Form {
     }else{
     	$html = '
 			<div style="background:#CCC; padding:10px;">
-	      '.html::anchor("delete/".$value->id, html::image("uploads/".$value->filename) ).'
+	      '.html::anchor("delete/".$value->id, html::image("upload/".$attributes["upload_dir"].$value->filename) ).'
 	    </div>';
     }
 
