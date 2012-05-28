@@ -360,6 +360,10 @@ class form extends Kohana_Form {
 			$attributes["label"] = $name;
 		}
 
+		if(!array_key_exists("multiple", $attributes)){
+			$attributes["multiple"] = false;
+		}
+
 		if(!array_key_exists("btn_caption", $attributes)){
 			$attributes["btn_caption"] = "+ Adicionar " . $name;
 		}
@@ -376,10 +380,12 @@ class form extends Kohana_Form {
 	    </div>';
     }
 
-    $html .= '<dl class="add" style="overflow:hidden;">
-      <a href="#" class="bt_green" id="add_img"><span class="bt_green_lft"></span><strong>'.$attributes["btn_caption"].'</strong><span class="bt_green_r"></span></a>
-    </dl>
-    <input type="hidden" name="num_file">';
+    if($attributes["multiple"]){
+	    $html .= '<dl class="add" style="overflow:hidden;">
+	      <a href="#" class="bt_green" id="add_img"><span class="bt_green_lft"></span><strong>'.$attributes["btn_caption"].'</strong><span class="bt_green_r"></span></a>
+	    </dl>
+	    <input type="hidden" name="num_file">';
+    }
 
     return $html;
 
