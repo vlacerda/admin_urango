@@ -375,21 +375,21 @@ class form extends Kohana_Form {
 		if($value == ""){		
 			$html = '
 			<div class="repeat_img" style="background:#CCC; padding:10px;">
-	      '.form::admin_file($name, array("label" => $attributes["label"])).'
-	    </div>';
-    }else{
-    	$html = '
+	      	'.form::admin_file($name, array("label" => $attributes["label"])).'
+	    	</div>';
+    	}else{
+    		$html = '
 			<div style="background:#CCC; padding:10px;">
-	      '.html::anchor("delete/".$value->id, html::image("upload/".$attributes["upload_dir"].$value->filename) ).'
-	    </div>';
-    }
+	      		'.html::anchor("delete/".$value->id, html::image("upload/".$attributes["upload_dir"].$value->filename) ).'
+	    	</div>';
+    	}
 
-    if($attributes["multiple"]){
-	    $html .= '<dl class="add" style="overflow:hidden;">
-	      <a href="#" class="bt_green" id="add_img"><span class="bt_green_lft"></span><strong>'.$attributes["btn_caption"].'</strong><span class="bt_green_r"></span></a>
-	    </dl>
-	    <input type="hidden" name="num_file">';
-    }
+	    if($attributes["multiple"]){
+		    $html .= '<dl class="add" style="overflow:hidden;">
+		      <a href="#" class="bt_green" id="add_img"><span class="bt_green_lft"></span><strong>'.$attributes["btn_caption"].'</strong><span class="bt_green_r"></span></a>
+		    </dl>
+		    <input type="hidden" name="num_file">';
+	    }
 
     return $html;
 
